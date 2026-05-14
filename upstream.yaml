@@ -1,0 +1,25 @@
+schema_version: vyges-upstream-v1
+upstream:
+  type: vendor_drop
+  repo: https://github.com/chipfoundry/CF_SRAM_16384x32
+  version: CF_SRAM_16384x32-v1.0.1
+  # 'commit' is resolved by the sync workflow from the version tag
+  # and written back here for provenance.
+
+mirror:
+  tags: true
+  releases: true
+  release_assets: true
+  lfs:
+    patterns:
+      - "*.gds"
+      - "*.gds.gz"
+      - "*.oas"
+
+license:
+  spdx: Apache-2.0
+  file: LICENSE
+
+# Mirror-locked metadata: upstream sync workflow will not regenerate
+# vyges-metadata.json automatically.
+metadata_locked: true

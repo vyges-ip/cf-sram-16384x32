@@ -1,0 +1,41 @@
+# Per-mirror shim — drop into <mirror_repo>/.github/workflows/upstream-sync.yml
+#
+# Mirrors of vendor_drop bundles (cf-sram-*x32, future foundry IO mirrors,
+# etc.) delegate sync to the central reusable workflow at
+# vyges-ip/.github/.github/workflows/upstream-sync-vendor-drop.yml so that
+# all mirrors share one well-tested implementation.
+#
+# Triggers:
+#   - workflow_dispatch:    manual run with optional `force` input
+#   - push on upstream.yaml:  bump upstream.version → re-sync automatically
+#   - schedule (weekly):    detects upstream tag force-pushes (rare but possible)
+#
+# Replace none of this — the mirror's only customizable surface is
+# upstream.yaml (version pin, mirror.lfs.patterns, mirror.tags/releases/assets).
+
+name: Upstream Sync
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Force re-sync even if upstream.commit already matches the resolved version tag'
+        required: false
+        default: false
+        type: boolean
+  push:
+    paths:
+      - 'upstream.yaml'
+      - '.github/workflows/upstream-sync.yml'
+  schedule:
+    # Weekly Monday 00:00 UTC — catches tag force-pushes upstream.
+    # Most syncs happen on demand when an operator bumps upstream.version.
+    - cron: '0 0 * * 1'
+
+jobs:
+  sync:
+    uses: vyges-ip/.github/.github/workflows/upstream-sync-vendor-drop.yml@main
+    with:
+      force: ${{ inputs.force || false }}
+    permissions:
+      contents: write
