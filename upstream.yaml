@@ -6,6 +6,7 @@ upstream:
   # 'commit' is resolved by the sync workflow from the version tag
   # and written back here for provenance.
 
+  commit: d26e26caf0e006b68197d23f6dbe780dd2f11367
 mirror:
   tags: true
   releases: true
@@ -15,11 +16,9 @@ mirror:
       - "*.gds"
       - "*.gds.gz"
       - "*.oas"
-
 license:
   spdx: Apache-2.0
   file: LICENSE
-
 # Mirror-locked metadata: upstream sync workflow will not regenerate
 # vyges-metadata.json automatically.
 metadata_locked: true

@@ -1,0 +1,151 @@
+# Hardware Design Project .gitignore
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Log files
+*.log
+*.out
+*.err
+
+# Temporary files
+*.tmp
+*.temp
+
+# Build artifacts
+build/
+obj/
+*.o
+*.a
+
+# Simulation files
+*.vcd
+*.fsdb
+*.vpd
+*.dump
+simv
+simv.daidir
+csrc/
+*.key
+
+# Synthesis files
+*.syn
+*.sdc
+*.sdf
+*.spf
+*.spef
+
+# Layout files (consider if you want to ignore these)
+# *.gds
+# *.lef
+# *.mag
+
+# Library files (consider if you want to ignore these)
+# *.lib
+# *.db
+
+# Documentation build
+doc/build/
+doc/_build/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# CAD tool specific
+.cadence/
+.synopsys/
+.mentor/
+*.cdb
+*.cdba
+*.cdbb
+*.cdbc
+*.cdbd
+*.cdbe
+*.cdbf
+*.cdbg
+*.cdbh
+*.cdbi
+*.cdbj
+*.cdbk
+*.cdbl
+*.cdbm
+*.cdbn
+*.cdbo
+*.cdbp
+*.cdbq
+*.cdbr
+*.cdbs
+*.cdbt
+*.cdbu
+*.cdbv
+*.cdbw
+*.cdbx
+*.cdby
+*.cdbz
+
+# Version control
+.git/
+.svn/
+.hg/
+.bzr/
+
+# Archive files
+*.tar
+*.tar.gz
+*.zip
+*.rar
+*.7z
+
+# IPM package directories (generated artifacts)
+package-*/
+
+# Configuration files with sensitive data
+*.cfg
+*.conf
+config.local.* 
+
+# OpenLane/LibreLane build artifacts
+openlane/.venv/
+openlane/.version-*
+openlane/*/runs/
+openlane/*/tmp/
+openlane/*/*.log
+openlane/*/error.log
+openlane/*/warning.log
+openlane/*/flow.log
+
+EF_SRAM*
+S8TSSC*

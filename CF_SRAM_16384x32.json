@@ -1,0 +1,32 @@
+{
+    "info": {
+        "name": "CF_SRAM_16384x32",
+        "description": "Commercial 16384x32 SRAM (64KB)",
+        "repo": "https://github.com/chipfoundry/CF_SRAM_16384x32.git",
+        "owner": "Umbralogic Technologies LLC",
+        "license": "",
+        "author": "Umbralogic Technologies LLC.",
+        "email": "ip-admin@chipfoundry.com",
+        "version": "v1.0.0",
+        "date": "12-08-2025",
+        "category": "digital",
+        "tags": [
+            "SRAM",
+            "memory"
+        ],
+        "bus": [
+            "WB"
+        ],
+        "type": "hard",
+        "width": 680.000,
+        "height": 3260.000,
+        "technology": "sky130",
+        "maturity": "Verified",
+        "supply_voltage": [
+            1.8
+        ],
+        "cell_count": "",
+        "clock_freq_mhz": 100
+    },
+    "registers": []
+}
